@@ -6,7 +6,7 @@
     RequestedTheme="Light">
 
     <Application.Resources>
-        <ImageBrush x:Key="bg" ImageSource="Assets/img/coins_bg_app.png" Stretch="UniformToFill" />
+        <ImageBrush x:Key="bg" ImageSource="Assets/img/coins_bg_2.png" Stretch="UniformToFill" />
     </Application.Resources>
 
 </Application>
