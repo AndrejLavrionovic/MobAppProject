@@ -57,7 +57,7 @@ namespace ALWallet.Control {
                     trMod = new TransactionMod();
                         var tr = o.GetObject();
                         trMod.type = tr["type"].ToString();
-                        trMod.date = tr["date"].ToString();
+                        trMod.date = convertIntoDate(tr["date"].ToString());
                         trMod.category = tr["category"].ToString();
                         trMod.description = tr["description"].ToString();
                         trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
@@ -73,7 +73,7 @@ namespace ALWallet.Control {
 
                     var d = o.GetObject();
                     dMod.from = d["from"].ToString();
-                    dMod.date = d["date"].ToString();
+                    dMod.date = convertIntoDate(d["date"].ToString());
                     dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
 
                     debts.Add(dMod);
@@ -88,7 +88,7 @@ namespace ALWallet.Control {
 
                     var l = o.GetObject();
                     lMod.to = l["to"].ToString();
-                    lMod.date = l["date"].ToString();
+                    lMod.date = convertIntoDate(l["date"].ToString());
                     lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
 
                     lends.Add(lMod);
@@ -103,6 +103,21 @@ namespace ALWallet.Control {
 
                 this._accounts.Add(acc);
             }
+        }
+
+        private DateTime convertIntoDate(string date) {
+
+            DateTime d;
+
+            if (date.Contains('\"')) {
+                string trimmed = date.Trim('\"');
+                d = Convert.ToDateTime(trimmed);
+            }
+            else {
+                d = Convert.ToDateTime(date);
+            }
+
+            return d;
         }
 
         public List<Account> getAccList() {

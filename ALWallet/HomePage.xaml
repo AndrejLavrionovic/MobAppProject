@@ -9,7 +9,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <StackPanel x:Name="spList">
+        <StackPanel x:Name="spList"
+                    Margin="50 100 0 0">
             
         </StackPanel>
 

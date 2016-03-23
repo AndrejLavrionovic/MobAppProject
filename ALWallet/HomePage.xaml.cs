@@ -37,7 +37,7 @@ namespace ALWallet {
                 Account a = accounts[0];
                 TransactionMod trs = a.transactons[0];
 
-                tb.Text = trs.date;
+                tb.Text = trs.date.ToString("dd/MM/yyyy");
             }
             else {
                 tb.Text = "Account is empty.";

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ALWallet.Model {
     class LendMod {
         public string to { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public double ammount { get; set; }
     }
 }

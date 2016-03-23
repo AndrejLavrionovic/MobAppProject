@@ -10,14 +10,14 @@
       "transactions": [
         {
           "type": "d",
-          "date": "03/25/2016",
+          "date": "25/03/2016",
           "category": "Rent",
           "description": "",
           "ammount": 0
         },
         {
           "type": "w",
-          "data": "03/29/2016",
+          "date": "29/03/2016",
           "category": "Hopping",
           "description": "",
           "ammount": 0
@@ -27,14 +27,14 @@
         {
           "from": "",
           "date": "",
-          "amount": 0
+          "ammount": 0
         }
       ],
       "lend": [
         {
           "to": "",
           "date": "",
-          "amount": 0
+          "ammount": 0
         }
       ]
     }

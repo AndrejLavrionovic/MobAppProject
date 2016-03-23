@@ -8,7 +8,7 @@ namespace ALWallet.Model {
     class DebtMod {
 
         public string from { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public double ammount { get; set; }
     }
 }
