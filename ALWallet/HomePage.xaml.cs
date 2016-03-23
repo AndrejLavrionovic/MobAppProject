@@ -23,5 +23,11 @@ namespace ALWallet {
         public HomePage() {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e) {
+
+            // 1 - Check if any account exist
+
+        }
     }
 }
