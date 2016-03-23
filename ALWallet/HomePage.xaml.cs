@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ALWallet.Control;
+using ALWallet.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,9 +27,22 @@ namespace ALWallet {
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
+            DataContext dc = new DataContext();
 
             // 1 - Check if any account exist
+            List<Account> accounts = dc.getAccList();
 
+            TextBlock tb = new TextBlock();
+            if (accounts != null) {
+                Account a = accounts[0];
+                TransactionMod trs = a.transactons[0];
+
+                tb.Text = trs.date;
+            }
+            else {
+                tb.Text = "Account is empty.";
+            }
+            spList.Children.Add(tb);
         }
     }
 }

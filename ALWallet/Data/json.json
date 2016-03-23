@@ -2,8 +2,11 @@
   {
     "account": {
       "accountname": "",
-      "startingbalance": 0,
-      "currentbalance": 0,
+      "balance": {
+        "start": 0,
+        "current": 0,
+        "outstanding": 0
+      },
       "transactions": [
         {
           "type": "withdraw",

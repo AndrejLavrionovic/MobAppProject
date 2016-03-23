@@ -2,32 +2,35 @@
   {
     "account": {
       "accountname": "",
-      "startingbalance": 0,
-      "currentbalance": 0,
+      "balance": {
+        "start": 52,
+        "current": 32,
+        "outstanding": 14
+      },
       "transactions": [
         {
-          "type": "withdraw",
-          "date": "2016-03-25",
+          "type": "d",
+          "date": "03/25/2016",
           "category": "Rent",
           "description": "",
           "ammount": 0
         },
         {
-          "type": "withdraw",
-          "data": "2016-03-24",
+          "type": "w",
+          "data": "03/29/2016",
           "category": "Hopping",
           "description": "",
           "ammount": 0
         }
       ],
-      "dept": [
+      "debt": [
         {
           "from": "",
           "date": "",
           "amount": 0
         }
       ],
-      "lent": [
+      "lend": [
         {
           "to": "",
           "date": "",

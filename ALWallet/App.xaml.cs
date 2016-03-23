@@ -1,12 +1,15 @@
-﻿using System;
+﻿using ALWallet.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -79,6 +82,7 @@ namespace ALWallet
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
         }
 
         /// <summary>

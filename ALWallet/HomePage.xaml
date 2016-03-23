@@ -9,5 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <StackPanel x:Name="spList">
+            
+        </StackPanel>
+
     </Grid>
 </Page>
