@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ALWallet.Model {
-    class DebtMod {
+    public class DebtMod {
 
         public string from { get; set; }
         public DateTime date { get; set; }

@@ -26,14 +26,14 @@
       "debt": [
         {
           "from": "",
-          "date": "",
+          "date": "26/03/2016",
           "ammount": 0
         }
       ],
       "lend": [
         {
           "to": "",
-          "date": "",
+          "date": "28/03/2016",
           "ammount": 0
         }
       ]

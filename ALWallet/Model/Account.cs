@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ALWallet.Model {
-    class Account {
+    public class Account {
 
         //private List<Account> balance;
 
