@@ -126,77 +126,81 @@ namespace ALWallet
 
             var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
             var fileContent = await FileIO.ReadTextAsync(jsonFile); // json string
-            var jsonArr = JsonArray.Parse(fileContent); // get json Array from string
 
-            // getting data
-            foreach (var item in jsonArr) {
-                acc = new Account();
+            if (!String.IsNullOrEmpty(fileContent)) {
+                var jsonArr = JsonArray.Parse(fileContent); // get json Array from string
 
-                // account
-                var account = item.GetObject()["account"].GetObject();
+                // getting data
+                foreach (var item in jsonArr) {
+                    acc = new Account();
 
-                acc.accname = account["accountname"].ToString();
+                    // account
+                    var account = item.GetObject()["account"].GetObject();
 
-                // balance
-                var bal = account["balance"].GetObject();
+                    acc.accname = account["accountname"].ToString();
 
-                List<double> balanceList = new List<double>();
-                balanceList.Add(Convert.ToDouble(bal["start"].ToString()));
-                balanceList.Add(Convert.ToDouble(bal["current"].ToString()));
-                balanceList.Add(Convert.ToDouble(bal["outstanding"].ToString()));
-                acc.balance = balanceList;
+                    // balance
+                    var bal = account["balance"].GetObject();
 
-                // transactions
-                var trs = account["transactions"].GetArray();
-                List<TransactionMod> trList = new List<TransactionMod>();
+                    List<double> balanceList = new List<double>();
+                    balanceList.Add(Convert.ToDouble(bal["start"].ToString()));
+                    balanceList.Add(Convert.ToDouble(bal["current"].ToString()));
+                    balanceList.Add(Convert.ToDouble(bal["outstanding"].ToString()));
+                    acc.balance = balanceList;
 
-                foreach (var o in trs) {
-                    trMod = new TransactionMod();
-                    var tr = o.GetObject();
-                    trMod.type = tr["type"].ToString();
-                    trMod.date = convertIntoDate(tr["date"].ToString());
-                    trMod.category = tr["category"].ToString();
-                    trMod.description = tr["description"].ToString();
-                    trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
-                    trList.Add(trMod);
+                    // transactions
+                    var trs = account["transactions"].GetArray();
+                    List<TransactionMod> trList = new List<TransactionMod>();
+
+                    foreach (var o in trs) {
+                        trMod = new TransactionMod();
+                        var tr = o.GetObject();
+                        trMod.type = tr["type"].ToString();
+                        trMod.date = convertIntoDate(tr["date"].ToString());
+                        trMod.category = tr["category"].ToString();
+                        trMod.description = tr["description"].ToString();
+                        trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
+                        trList.Add(trMod);
+                    }
+
+                    // debt
+                    var ds = account["debt"].GetArray();
+                    List<DebtMod> debts = new List<DebtMod>();
+
+                    foreach (var o in ds) {
+                        dMod = new DebtMod();
+
+                        var d = o.GetObject();
+                        dMod.from = d["from"].ToString();
+                        dMod.date = convertIntoDate(d["date"].ToString());
+                        dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
+
+                        debts.Add(dMod);
+                    }
+
+                    // lend
+                    var ls = account["lend"].GetArray();
+                    List<LendMod> lends = new List<LendMod>();
+
+                    foreach (var o in ls) {
+                        lMod = new LendMod();
+
+                        var l = o.GetObject();
+                        lMod.to = l["to"].ToString();
+                        lMod.date = convertIntoDate(l["date"].ToString());
+                        lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
+
+                        lends.Add(lMod);
+                    }
+
+                    acc.transactons = trList;
+                    acc.debts = debts;
+                    acc.lends = lends;
+
+                    this._getListOfAcc.Add(acc);
                 }
-
-                // debt
-                var ds = account["debt"].GetArray();
-                List<DebtMod> debts = new List<DebtMod>();
-
-                foreach (var o in ds) {
-                    dMod = new DebtMod();
-
-                    var d = o.GetObject();
-                    dMod.from = d["from"].ToString();
-                    dMod.date = convertIntoDate(d["date"].ToString());
-                    dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
-
-                    debts.Add(dMod);
-                }
-
-                // lend
-                var ls = account["lend"].GetArray();
-                List<LendMod> lends = new List<LendMod>();
-
-                foreach (var o in ls) {
-                    lMod = new LendMod();
-
-                    var l = o.GetObject();
-                    lMod.to = l["to"].ToString();
-                    lMod.date = convertIntoDate(l["date"].ToString());
-                    lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
-
-                    lends.Add(lMod);
-                }
-
-                acc.transactons = trList;
-                acc.debts = debts;
-                acc.lends = lends;
-
-                this._getListOfAcc.Add(acc);
             }
+            else { this._getListOfAcc = null; }
         }
 
         private DateTime convertIntoDate(string date) {
