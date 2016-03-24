@@ -60,8 +60,8 @@ namespace ALWallet {
             //}
         }
 
-        private void BtnNewAcc_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+        private void btnNewAcc_Click_1(object sender, RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(NewAccount));
         }
     }
 }

@@ -22,6 +22,7 @@
                        FontWeight="Normal"
                        Foreground="#3F3F3F"
                        Text="Choose an accounts"/>
+            
             <StackPanel x:Name="spAccListContainer"
                         Margin="0 50 0 0">
                 <!--:::::::::::::::::::::::::List view header::::::::::::::::::::::::::-->
@@ -65,6 +66,18 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <!-- :::::::::::::::::::::End of ListView::::::::::::::::::::::::::::: -->
+            </StackPanel>
+            <StackPanel x:Name="btns" Orientation="Horizontal">
+                <Button x:Name="btnNewAcc"
+                        Content="New Account"
+                        Width="150"
+                        Height="30"
+                        FontFamily="Verdana"
+                        FontWeight="Normal"
+                        FontSize="14"
+                        Margin="20 20 0 0"
+                        Foreground="#3F3F3F" Click="btnNewAcc_Click_1"
+                        />
             </StackPanel>
         </StackPanel>
 

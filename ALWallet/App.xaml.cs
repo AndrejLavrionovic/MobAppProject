@@ -137,7 +137,7 @@ namespace ALWallet
                     // account
                     var account = item.GetObject()["account"].GetObject();
 
-                    acc.accname = account["accountname"].ToString();
+                    acc.accname = removeQuotations(account["accountname"].ToString());
 
                     // balance
                     var bal = account["balance"].GetObject();
@@ -155,10 +155,10 @@ namespace ALWallet
                     foreach (var o in trs) {
                         trMod = new TransactionMod();
                         var tr = o.GetObject();
-                        trMod.type = tr["type"].ToString();
+                        trMod.type = removeQuotations(tr["type"].ToString());
                         trMod.date = convertIntoDate(tr["date"].ToString());
-                        trMod.category = tr["category"].ToString();
-                        trMod.description = tr["description"].ToString();
+                        trMod.category = removeQuotations(tr["category"].ToString());
+                        trMod.description = removeQuotations(tr["description"].ToString());
                         trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
                         trList.Add(trMod);
                     }
@@ -171,7 +171,7 @@ namespace ALWallet
                         dMod = new DebtMod();
 
                         var d = o.GetObject();
-                        dMod.from = d["from"].ToString();
+                        dMod.from = removeQuotations(d["from"].ToString());
                         dMod.date = convertIntoDate(d["date"].ToString());
                         dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
 
@@ -186,7 +186,7 @@ namespace ALWallet
                         lMod = new LendMod();
 
                         var l = o.GetObject();
-                        lMod.to = l["to"].ToString();
+                        lMod.to = removeQuotations(l["to"].ToString());
                         lMod.date = convertIntoDate(l["date"].ToString());
                         lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
 
@@ -216,6 +216,18 @@ namespace ALWallet
             }
 
             return d;
+        }
+
+        private string removeQuotations(string str) {
+            string s;
+
+            if (str.Contains('\"')) {
+                s = str.Trim('\"');
+                return s;
+            }
+            else {
+                return str;
+            }
         }
     }
 }
