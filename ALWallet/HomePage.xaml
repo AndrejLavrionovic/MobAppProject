@@ -5,13 +5,67 @@
     xmlns:local="using:ALWallet"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:ALWallet.Model"
+    xmlns:converters="using:ALWallet.Converter"
     mc:Ignorable="d">
+    <Page.Resources>
+        <converters:StringFormatConverter x:Key="StringFormatConverter" />
+    </Page.Resources>
 
     <Grid Background="{StaticResource bg}">
 
-        <StackPanel x:Name="spList"
-                    Margin="50 100 0 0">
-            
+        <StackPanel x:Name="spMain"
+                    Margin="50 100 50 0">
+            <TextBlock x:Name="txbTitle"
+                       FontFamily="Verdana"
+                       FontSize="36"
+                       FontWeight="Normal"
+                       Foreground="#3F3F3F"
+                       Text="Choose an accounts"/>
+            <StackPanel x:Name="spAccListContainer"
+                        Margin="0 50 0 0">
+                <!--:::::::::::::::::::::::::List view header::::::::::::::::::::::::::-->
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Height="50">
+                    <TextBlock Width="280"
+                               Text="Account"
+                               FontFamily="Calibry"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#282828"
+                               Margin="16, 0, 0, 0"
+                               />
+                    <TextBlock Text="Balance"
+                               FontFamily="Calibry"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#282828"
+                               />
+                </StackPanel>
+                
+                <!-- :::::::::::::::::::::: List view it self ::::::::::::::::::::::::-->
+                <ListView ItemsSource="{x:Bind accounts}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="data:Account">
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <TextBlock Width="300"
+                                           Text="{x:Bind accname}"
+                                           FontFamily="Arial"
+                                           FontWeight="Normal"
+                                           Foreground="#4C4C4C"
+                                           FontSize="16"
+                                           />
+                                <TextBlock 
+                                           FontFamily="Arial"
+                                           FontWeight="Normal"
+                                           Foreground="#4C4C4C"
+                                           FontSize="16"
+                                           Text="{x:Bind balance[1], Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:c}'}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!-- :::::::::::::::::::::End of ListView::::::::::::::::::::::::::::: -->
+            </StackPanel>
         </StackPanel>
 
     </Grid>

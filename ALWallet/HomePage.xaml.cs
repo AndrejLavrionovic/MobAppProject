@@ -22,27 +22,42 @@ namespace ALWallet {
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class HomePage : Page {
+
+        List<Account> accounts;
         public HomePage() {
             this.InitializeComponent();
+
+            // 1 - Check if any account exist
+            DataContext dc = new DataContext();
+            accounts = dc.getAllAcc();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
-            DataContext dc = new DataContext();
 
-            // 1 - Check if any account exist
-            List<Account> accounts = dc.getAccList();
+            //TextBlock tbAccount;
+            //TextBlock tbBalance;
+            //StackPanel spAccList;
+            //if (accounts != null) {
+            //    foreach(var acc in accounts) {
+            //        string accName = acc.accname;
+            //        double bal = acc.balance[1];
+            //        tbAccount = new TextBlock();
+            //        tbBalance = new TextBlock();
 
-            TextBlock tb = new TextBlock();
-            if (accounts != null) {
-                Account a = accounts[0];
-                TransactionMod trs = a.transactons[0];
+            //        tbAccount.Width = 200;
+            //        tbBalance.Width = 100;
 
-                tb.Text = trs.date.ToString("dd/MM/yyyy");
-            }
-            else {
-                tb.Text = "Create Account.";
-            }
-            spList.Children.Add(tb);
+            //        tbAccount.Text = accName;
+            //        tbBalance.Text = "Bal: " + String.Format("{0:c}",bal);
+
+            //        spAccList = new StackPanel();
+            //        spAccList.Orientation = Orientation.Horizontal;
+            //        spAccList.Children.Add(tbAccount);
+            //        spAccList.Children.Add(tbBalance);
+
+            //        spAccListContainer.Children.Add(spAccList);
+            //    }
+            //}
         }
 
         private void BtnNewAcc_Click(object sender, RoutedEventArgs e) {
