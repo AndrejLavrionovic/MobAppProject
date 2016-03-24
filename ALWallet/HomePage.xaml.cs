@@ -40,9 +40,13 @@ namespace ALWallet {
                 tb.Text = trs.date.ToString("dd/MM/yyyy");
             }
             else {
-                tb.Text = "Account is empty.";
+                tb.Text = "Create Account.";
             }
             spList.Children.Add(tb);
+        }
+
+        private void BtnNewAcc_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
         }
     }
 }

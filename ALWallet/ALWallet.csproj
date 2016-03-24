@@ -139,6 +139,7 @@
     <Content Include="Assets\img\coins_bg_2.png" />
     <Content Include="Assets\img\coins_bg_app.png" />
     <Content Include="Data\alwallet.txt" />
+    <Content Include="Data\data.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
