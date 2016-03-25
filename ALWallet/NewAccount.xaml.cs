@@ -122,6 +122,7 @@ namespace ALWallet {
 
             App myApp = (Application.Current) as App;
             myApp._getListOfAcc.Add(acc);
+            myApp.setJsonFile();
         }
     }
 }

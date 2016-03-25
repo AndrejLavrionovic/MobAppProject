@@ -229,5 +229,84 @@ namespace ALWallet
                 return str;
             }
         }
+
+        public async void setJsonFile() {
+            
+            if(this._getListOfAcc != null) { // check if list is not empty
+
+                // creating string
+                var jsonContent = getJsonContent(this._getListOfAcc);
+
+                // pointer on json file
+                var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
+                await FileIO.WriteTextAsync(jsonFile, jsonContent);
+            }
+        }
+
+        private string getJsonContent(List<Account> list) {
+            int coma;
+            int accounts = 0;
+            string jContent = "[";
+
+            foreach (Account a in list){
+                jContent += "{\"account\": { \"accountname\": \"" + a.accname +
+                    "\", \"balance\": {\"start\": " + String.Format("{0:0.00}", a.balance[0]) +
+                    ", \"current\": " + String.Format("{0:0.00}", a.balance[1]) +
+                    ", \"outstanding\": " + String.Format("{0:0.00}", a.balance[2]) +
+                    "}, \"transactions\": [\n";
+
+                if(a.transactons != null) {
+                    coma = 0;
+
+                    foreach (TransactionMod tr in a.transactons) {
+
+                        jContent += "{\"type\": \"" + tr.type + "\", \"date\": \"" + tr.date + "\", " +
+                            "\"category\": \"" + tr.category + "\", \"description\": \"" + tr.description + "\", " +
+                            "\"ammount\": " + String.Format("{0:0.00}", tr.ammount) + "}";
+                        coma++;
+                        if (coma < a.transactons.Count)
+                            jContent += ",";
+                    }
+                }
+                
+                jContent += "], \"debt\": [\n";
+
+                if (a.debts != null) {
+                    coma = 0;
+
+                    foreach (DebtMod dm in a.debts) {
+
+                        jContent += "{\"from\": \"" + dm.from + "\", \"date\": \"" + dm.date + "\", " +
+                            "\"ammount\": " + String.Format("{0:0.00}", dm.ammount) + "}";
+                        coma++;
+                        if (coma < a.transactons.Count)
+                            jContent += ",";
+                    }
+                }
+
+                jContent += "], \"lend\": [\n";
+
+                if (a.debts != null) {
+                    coma = 0;
+
+                    foreach (LendMod lm in a.lends) {
+
+                        jContent += "{\"to\": \"" + lm.to + "\", \"date\": \"" + lm.date + "\", " +
+                            "\"ammount\": " + String.Format("{0:0.00}", lm.ammount) + "}";
+                        coma++;
+                        if (coma < a.transactons.Count)
+                            jContent += ",";
+                    }
+                }
+
+                jContent += "]}}\n";
+                accounts++;
+                if (accounts < list.Count)
+                    jContent += ",";
+            }
+            jContent += "]";
+
+            return jContent;
+        }
     }
 }
