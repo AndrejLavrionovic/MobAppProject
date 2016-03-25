@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Media;
+using ALWallet.Model;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,7 +35,30 @@ namespace ALWallet {
         private void btnCreate_Click(object sender, RoutedEventArgs e) {
 
             if (isValid()) {
-                tblTitle.Text = "Happy Days.";
+
+                // account name
+                string accName = tbxAccount.Text;
+                // list of balance
+                List<double> balance = new List<double>();
+                balance.Add(Convert.ToDouble(tbxBalance.Text));
+                balance.Add(Convert.ToDouble(tbxBalance.Text));
+                balance.Add(Convert.ToDouble(tbxBalance.Text));
+
+                // list of Transactions, debts and lends = null
+                List<TransactionMod> tr = null;
+                List<DebtMod> dm = null;
+                List<LendMod> lm = null;
+
+                // instnce of Account
+                Account account = new Account(accName, balance, tr, dm, lm);
+
+                // include account into global list
+                addAccount(account);
+
+                tbxAccount.Text = "";
+                tbxBalance.Text = "";
+
+                // Navigate to transactions
             }
         }
 
@@ -92,6 +116,12 @@ namespace ALWallet {
                 return false;
             }
             else return true;
+        }
+
+        private void addAccount(Account acc) {
+
+            App myApp = (Application.Current) as App;
+            myApp._getListOfAcc.Add(acc);
         }
     }
 }
