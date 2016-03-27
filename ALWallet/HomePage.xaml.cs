@@ -35,30 +35,6 @@ namespace ALWallet {
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
 
-            //TextBlock tbAccount;
-            //TextBlock tbBalance;
-            //StackPanel spAccList;
-            //if (accounts != null) {
-            //    foreach(var acc in accounts) {
-            //        string accName = acc.accname;
-            //        double bal = acc.balance[1];
-            //        tbAccount = new TextBlock();
-            //        tbBalance = new TextBlock();
-
-            //        tbAccount.Width = 200;
-            //        tbBalance.Width = 100;
-
-            //        tbAccount.Text = accName;
-            //        tbBalance.Text = "Bal: " + String.Format("{0:c}",bal);
-
-            //        spAccList = new StackPanel();
-            //        spAccList.Orientation = Orientation.Horizontal;
-            //        spAccList.Children.Add(tbAccount);
-            //        spAccList.Children.Add(tbBalance);
-
-            //        spAccListContainer.Children.Add(spAccList);
-            //    }
-            //}
         }
 
         private void btnNewAcc_Click_1(object sender, RoutedEventArgs e) {
