@@ -11,7 +11,7 @@ namespace ALWallet.Model {
         [PrimaryKey, NotNull, AutoIncrement]
         public int id { get; set; }
         [NotNull]
-        public char type { get; set; }
+        public string type { get; set; }
         [NotNull]
         public DateTime date { get; set; }
         public string category { get; set; }
@@ -24,14 +24,14 @@ namespace ALWallet.Model {
         // constructors
         public TransactionMod() { }
 
-        public TransactionMod(char type, DateTime date, double ammount, int accid) {
+        public TransactionMod(string type, DateTime date, double ammount, int accid) {
             this.type = type;
             this.date = date;
             this.ammount = ammount;
             this.accid = accid;
         }
 
-        public TransactionMod(char type, DateTime date, double ammount, int accid, string category) {
+        public TransactionMod(string type, DateTime date, double ammount, int accid, string category) {
             this.type = type;
             this.date = date;
             this.ammount = ammount;
@@ -39,7 +39,7 @@ namespace ALWallet.Model {
             this.category = category;
         }
 
-        public TransactionMod(char type, DateTime date, double ammount, int accid, string category, string description) {
+        public TransactionMod(string type, DateTime date, double ammount, int accid, string category, string description) {
             this.type = type;
             this.date = date;
             this.ammount = ammount;

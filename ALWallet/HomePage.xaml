@@ -26,7 +26,20 @@
             <StackPanel x:Name="spAccListContainer"
                         Margin="0 50 0 0">
                 <!--:::::::::::::::::::::::::List view header::::::::::::::::::::::::::-->
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Height="50">
+                <StackPanel x:Name="spCreateNewAccount"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal"
+                            Height="50"
+                            Visibility="Collapsed">
+                    <TextBlock x:Name="tblCreateNewAccunt"
+                               Text="Create an account."
+                               FontFamily="Arial"
+                               FontSize="20"
+                               FontWeight="Normal"
+                               Foreground="#4C4C4C"
+                               />
+                </StackPanel>
+                <StackPanel x:Name="spLVHeader" HorizontalAlignment="Left" Orientation="Horizontal" Height="50">
                     <TextBlock Width="280"
                                Text="Account"
                                FontFamily="Calibry"
@@ -44,7 +57,7 @@
                 </StackPanel>
                 
                 <!-- :::::::::::::::::::::: List view it self ::::::::::::::::::::::::-->
-                <ListView ItemsSource="{x:Bind accounts}">
+                <ListView x:Name="lvAccounts" ItemsSource="{x:Bind accounts}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Account">
                             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
@@ -60,7 +73,7 @@
                                            FontWeight="Normal"
                                            Foreground="#4C4C4C"
                                            FontSize="16"
-                                           Text="{x:Bind balance[1], Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:c}'}" />
+                                           Text="{x:Bind current, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:c}'}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

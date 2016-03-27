@@ -13,17 +13,31 @@ namespace ALWallet.Model {
         [NotNull]
         public string accname {get; set;}
         [NotNull]
-        public int start { get; set; }
-        public int current { get; set; }
+        public double start { get; set; }
+        public double current { get; set; }
         [NotNull]
         public DateTime created { get; set; }
 
         // constructor
         public Account() { }
 
-        public Account(string accname, int start) {
+        public Account(string accname, double start) {
             this.accname = accname;
             this.start = start;
         }
+        public Account(string accname, double start, double current, DateTime created) {
+            this.accname = accname;
+            this.start = start;
+            this.current = current;
+            this.created = created;
+        }
+
+        //public Account(int id, string accname, double start, double current, DateTime created) {
+        //    this.id = id;
+        //    this.accname = accname;
+        //    this.start = start;
+        //    this.current = current;
+        //    this.created = created;
+        //}
     }
 }

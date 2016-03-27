@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Media;
 using ALWallet.Model;
+using ALWallet.Control;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -36,24 +37,27 @@ namespace ALWallet {
 
             if (isValid()) {
 
+                DataContext dc = new DataContext();
+
                 // account name
                 string accName = tbxAccount.Text;
-                // list of balance
-                List<double> balance = new List<double>();
-                balance.Add(Convert.ToDouble(tbxBalance.Text));
-                balance.Add(Convert.ToDouble(tbxBalance.Text));
-                balance.Add(Convert.ToDouble(tbxBalance.Text));
-
-                // list of Transactions, debts and lends = null
-                List<TransactionMod> tr = null;
-                List<DebtMod> dm = null;
-                List<LendMod> lm = null;
+                double balance = Convert.ToDouble(tbxBalance.Text);
+                DateTime date = DateTime.Now;
 
                 // instnce of Account
-                Account account = new Account(accName, balance, tr, dm, lm);
+                Account account = new Account(accName, balance, balance, date);
+                
+                if(dc.createNewAccount(account) == 1) {
+                    this.Frame.Navigate(typeof(HomePage));
+                }
+                else {
+                    spErrors.Visibility = Visibility.Visible;
+                    TextBlock tblErr = new TextBlock();
+                    tblErr.Text = "Error: Account creation is faild.";
+                }
 
                 // include account into global list
-                addAccount(account);
+                //addAccount(account);
 
                 tbxAccount.Text = "";
                 tbxBalance.Text = "";
@@ -119,10 +123,7 @@ namespace ALWallet {
         }
 
         private void addAccount(Account acc) {
-
-            App myApp = (Application.Current) as App;
-            myApp._getListOfAcc.Add(acc);
-            myApp.setJsonFile();
+            DataContext dc = new DataContext();
         }
     }
 }

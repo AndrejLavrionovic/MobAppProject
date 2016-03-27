@@ -34,10 +34,18 @@ namespace ALWallet {
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
-
+            if(accounts == null) {
+                lvAccounts.Visibility = Visibility.Collapsed;
+                spLVHeader.Visibility = Visibility.Collapsed;
+                spCreateNewAccount.Visibility = Visibility.Visible;
+            }
         }
 
         private void btnNewAcc_Click_1(object sender, RoutedEventArgs e) {
+
+            lvAccounts.Visibility = Visibility.Visible;
+            spLVHeader.Visibility = Visibility.Visible;
+            spCreateNewAccount.Visibility = Visibility.Collapsed;
             this.Frame.Navigate(typeof(NewAccount));
         }
     }

@@ -69,6 +69,7 @@ namespace ALWallet
                 //if (_getListOfAcc == null) {
                 //    populateAccount();
                 //}
+                createSqliteDb();
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
