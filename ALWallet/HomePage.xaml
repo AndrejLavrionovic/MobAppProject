@@ -67,6 +67,7 @@
                 </ListView>
                 <!-- :::::::::::::::::::::End of ListView::::::::::::::::::::::::::::: -->
             </StackPanel>
+            <!-- :::::::::::::::::::::New Account Button::::::::::::::::::::::::::::: -->
             <StackPanel x:Name="btns" Orientation="Horizontal">
                 <Button x:Name="btnNewAcc"
                         Content="New Account"
@@ -78,6 +79,12 @@
                         Margin="20 20 0 0"
                         Foreground="#3F3F3F" Click="btnNewAcc_Click_1"
                         />
+            </StackPanel>
+
+
+            <!-- :::::::::::::::::::::TEMP EXPEREMENT::::::::::::::::::::::::::::: -->
+            <StackPanel>
+                <TextBlock x:Name="tblSqlite"/>
             </StackPanel>
         </StackPanel>
 

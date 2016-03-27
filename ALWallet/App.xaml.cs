@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using SQLite.Net;
 
 namespace ALWallet
 {
@@ -305,6 +306,10 @@ namespace ALWallet
 
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         //SQLITE
+        private void createSqliteDb() {
+            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "alwallet.sqlite");
+            SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+        }
         //ENDSQLITE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     }
 }
