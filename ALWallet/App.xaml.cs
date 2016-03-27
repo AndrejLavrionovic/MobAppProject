@@ -66,9 +66,9 @@ namespace ALWallet
                     //TODO: Load state from previously suspended application
                 }
 
-                if (_getListOfAcc == null) {
-                    populateAccount();
-                }
+                //if (_getListOfAcc == null) {
+                //    populateAccount();
+                //}
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
@@ -110,198 +110,198 @@ namespace ALWallet
         //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         // JSON
         // retrieve data and populate list
-        private async void populateAccount() {
-            Account acc;
-            TransactionMod trMod;
-            DebtMod dMod;
-            LendMod lMod;
-            _getListOfAcc = new List<Account>();
+        //private async void populateAccount() {
+        //    Account acc;
+        //    TransactionMod trMod;
+        //    DebtMod dMod;
+        //    LendMod lMod;
+        //    _getListOfAcc = new List<Account>();
 
 
-            var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
-            var fileContent = await FileIO.ReadTextAsync(jsonFile); // json string
+        //    var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
+        //    var fileContent = await FileIO.ReadTextAsync(jsonFile); // json string
 
-            if (!String.IsNullOrEmpty(fileContent)) {
-                var jsonArr = JsonArray.Parse(fileContent); // get json Array from string
+        //    if (!String.IsNullOrEmpty(fileContent)) {
+        //        var jsonArr = JsonArray.Parse(fileContent); // get json Array from string
 
-                // getting data
-                foreach (var item in jsonArr) {
-                    acc = new Account();
+        //        // getting data
+        //        foreach (var item in jsonArr) {
+        //            acc = new Account();
 
-                    // account
-                    var account = item.GetObject()["account"].GetObject();
+        //            // account
+        //            var account = item.GetObject()["account"].GetObject();
 
-                    acc.accname = removeQuotations(account["accountname"].ToString());
+        //            acc.accname = removeQuotations(account["accountname"].ToString());
 
-                    // balance
-                    var bal = account["balance"].GetObject();
+        //            // balance
+        //            var bal = account["balance"].GetObject();
 
-                    List<double> balanceList = new List<double>();
-                    balanceList.Add(Convert.ToDouble(bal["start"].ToString()));
-                    balanceList.Add(Convert.ToDouble(bal["current"].ToString()));
-                    balanceList.Add(Convert.ToDouble(bal["outstanding"].ToString()));
-                    acc.balance = balanceList;
+        //            List<double> balanceList = new List<double>();
+        //            balanceList.Add(Convert.ToDouble(bal["start"].ToString()));
+        //            balanceList.Add(Convert.ToDouble(bal["current"].ToString()));
+        //            balanceList.Add(Convert.ToDouble(bal["outstanding"].ToString()));
+        //            acc.balance = balanceList;
 
-                    // transactions
-                    var trs = account["transactions"].GetArray();
-                    List<TransactionMod> trList = new List<TransactionMod>();
+        //            // transactions
+        //            var trs = account["transactions"].GetArray();
+        //            List<TransactionMod> trList = new List<TransactionMod>();
 
-                    foreach (var o in trs) {
-                        trMod = new TransactionMod();
-                        var tr = o.GetObject();
-                        trMod.type = removeQuotations(tr["type"].ToString());
-                        trMod.date = convertIntoDate(tr["date"].ToString());
-                        trMod.category = removeQuotations(tr["category"].ToString());
-                        trMod.description = removeQuotations(tr["description"].ToString());
-                        trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
-                        trList.Add(trMod);
-                    }
+        //            foreach (var o in trs) {
+        //                trMod = new TransactionMod();
+        //                var tr = o.GetObject();
+        //                trMod.type = removeQuotations(tr["type"].ToString());
+        //                trMod.date = convertIntoDate(tr["date"].ToString());
+        //                trMod.category = removeQuotations(tr["category"].ToString());
+        //                trMod.description = removeQuotations(tr["description"].ToString());
+        //                trMod.ammount = Convert.ToDouble(tr["ammount"].ToString());
+        //                trList.Add(trMod);
+        //            }
 
-                    // debt
-                    var ds = account["debt"].GetArray();
-                    List<DebtMod> debts = new List<DebtMod>();
+        //            // debt
+        //            var ds = account["debt"].GetArray();
+        //            List<DebtMod> debts = new List<DebtMod>();
 
-                    foreach (var o in ds) {
-                        dMod = new DebtMod();
+        //            foreach (var o in ds) {
+        //                dMod = new DebtMod();
 
-                        var d = o.GetObject();
-                        dMod.from = removeQuotations(d["from"].ToString());
-                        dMod.date = convertIntoDate(d["date"].ToString());
-                        dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
+        //                var d = o.GetObject();
+        //                dMod.from = removeQuotations(d["from"].ToString());
+        //                dMod.date = convertIntoDate(d["date"].ToString());
+        //                dMod.ammount = Convert.ToDouble(d["ammount"].ToString());
 
-                        debts.Add(dMod);
-                    }
+        //                debts.Add(dMod);
+        //            }
 
-                    // lend
-                    var ls = account["lend"].GetArray();
-                    List<LendMod> lends = new List<LendMod>();
+        //            // lend
+        //            var ls = account["lend"].GetArray();
+        //            List<LendMod> lends = new List<LendMod>();
 
-                    foreach (var o in ls) {
-                        lMod = new LendMod();
+        //            foreach (var o in ls) {
+        //                lMod = new LendMod();
 
-                        var l = o.GetObject();
-                        lMod.to = removeQuotations(l["to"].ToString());
-                        lMod.date = convertIntoDate(l["date"].ToString());
-                        lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
+        //                var l = o.GetObject();
+        //                lMod.to = removeQuotations(l["to"].ToString());
+        //                lMod.date = convertIntoDate(l["date"].ToString());
+        //                lMod.ammount = Convert.ToDouble(l["ammount"].ToString());
 
-                        lends.Add(lMod);
-                    }
+        //                lends.Add(lMod);
+        //            }
 
-                    acc.transactons = trList;
-                    acc.debts = debts;
-                    acc.lends = lends;
+        //            acc.transactons = trList;
+        //            acc.debts = debts;
+        //            acc.lends = lends;
 
-                    this._getListOfAcc.Add(acc);
-                }
-            }
-            else { this._getListOfAcc = null; }
-        }
+        //            this._getListOfAcc.Add(acc);
+        //        }
+        //    }
+        //    else { this._getListOfAcc = null; }
+        //}
 
-        private DateTime convertIntoDate(string date) {
+        //private DateTime convertIntoDate(string date) {
 
-            DateTime d;
+        //    DateTime d;
 
-            if (date.Contains('\"')) {
-                string trimmed = date.Trim('\"');
-                d = Convert.ToDateTime(trimmed);
-            }
-            else {
-                d = Convert.ToDateTime(date);
-            }
+        //    if (date.Contains('\"')) {
+        //        string trimmed = date.Trim('\"');
+        //        d = Convert.ToDateTime(trimmed);
+        //    }
+        //    else {
+        //        d = Convert.ToDateTime(date);
+        //    }
 
-            return d;
-        }
+        //    return d;
+        //}
 
-        private string removeQuotations(string str) {
-            string s;
+        //private string removeQuotations(string str) {
+        //    string s;
 
-            if (str.Contains('\"')) {
-                s = str.Trim('\"');
-                return s;
-            }
-            else {
-                return str;
-            }
-        }
+        //    if (str.Contains('\"')) {
+        //        s = str.Trim('\"');
+        //        return s;
+        //    }
+        //    else {
+        //        return str;
+        //    }
+        //}
 
-        public async void setJsonFile() {
+        //public async void setJsonFile() {
 
-            if (this._getListOfAcc != null) { // check if list is not empty
+        //    if (this._getListOfAcc != null) { // check if list is not empty
 
-                // creating string
-                var jsonContent = getJsonContent(this._getListOfAcc);
+        //        // creating string
+        //        var jsonContent = getJsonContent(this._getListOfAcc);
 
-                // pointer on json file
-                var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
-                await FileIO.WriteTextAsync(jsonFile, jsonContent);
-            }
-        }
+        //        // pointer on json file
+        //        var jsonFile = await Package.Current.InstalledLocation.GetFileAsync("Data\\alwallet.txt");
+        //        await FileIO.WriteTextAsync(jsonFile, jsonContent);
+        //    }
+        //}
 
-        private string getJsonContent(List<Account> list) {
-            int coma;
-            int accounts = 0;
-            string jContent = "[";
+        //private string getJsonContent(List<Account> list) {
+        //    int coma;
+        //    int accounts = 0;
+        //    string jContent = "[";
 
-            foreach (Account a in list) {
-                jContent += "{\"account\": { \"accountname\": \"" + a.accname +
-                    "\", \"balance\": {\"start\": " + String.Format("{0:0.00}", a.balance[0]) +
-                    ", \"current\": " + String.Format("{0:0.00}", a.balance[1]) +
-                    ", \"outstanding\": " + String.Format("{0:0.00}", a.balance[2]) +
-                    "}, \"transactions\": [\n";
+        //    foreach (Account a in list) {
+        //        jContent += "{\"account\": { \"accountname\": \"" + a.accname +
+        //            "\", \"balance\": {\"start\": " + String.Format("{0:0.00}", a.balance[0]) +
+        //            ", \"current\": " + String.Format("{0:0.00}", a.balance[1]) +
+        //            ", \"outstanding\": " + String.Format("{0:0.00}", a.balance[2]) +
+        //            "}, \"transactions\": [\n";
 
-                if (a.transactons != null) {
-                    coma = 0;
+        //        if (a.transactons != null) {
+        //            coma = 0;
 
-                    foreach (TransactionMod tr in a.transactons) {
+        //            foreach (TransactionMod tr in a.transactons) {
 
-                        jContent += "{\"type\": \"" + tr.type + "\", \"date\": \"" + tr.date + "\", " +
-                            "\"category\": \"" + tr.category + "\", \"description\": \"" + tr.description + "\", " +
-                            "\"ammount\": " + String.Format("{0:0.00}", tr.ammount) + "}";
-                        coma++;
-                        if (coma < a.transactons.Count)
-                            jContent += ",";
-                    }
-                }
+        //                jContent += "{\"type\": \"" + tr.type + "\", \"date\": \"" + tr.date + "\", " +
+        //                    "\"category\": \"" + tr.category + "\", \"description\": \"" + tr.description + "\", " +
+        //                    "\"ammount\": " + String.Format("{0:0.00}", tr.ammount) + "}";
+        //                coma++;
+        //                if (coma < a.transactons.Count)
+        //                    jContent += ",";
+        //            }
+        //        }
 
-                jContent += "], \"debt\": [\n";
+        //        jContent += "], \"debt\": [\n";
 
-                if (a.debts != null) {
-                    coma = 0;
+        //        if (a.debts != null) {
+        //            coma = 0;
 
-                    foreach (DebtMod dm in a.debts) {
+        //            foreach (DebtMod dm in a.debts) {
 
-                        jContent += "{\"from\": \"" + dm.from + "\", \"date\": \"" + dm.date + "\", " +
-                            "\"ammount\": " + String.Format("{0:0.00}", dm.ammount) + "}";
-                        coma++;
-                        if (coma < a.transactons.Count)
-                            jContent += ",";
-                    }
-                }
+        //                jContent += "{\"from\": \"" + dm.from + "\", \"date\": \"" + dm.date + "\", " +
+        //                    "\"ammount\": " + String.Format("{0:0.00}", dm.ammount) + "}";
+        //                coma++;
+        //                if (coma < a.transactons.Count)
+        //                    jContent += ",";
+        //            }
+        //        }
 
-                jContent += "], \"lend\": [\n";
+        //        jContent += "], \"lend\": [\n";
 
-                if (a.debts != null) {
-                    coma = 0;
+        //        if (a.debts != null) {
+        //            coma = 0;
 
-                    foreach (LendMod lm in a.lends) {
+        //            foreach (LendMod lm in a.lends) {
 
-                        jContent += "{\"to\": \"" + lm.to + "\", \"date\": \"" + lm.date + "\", " +
-                            "\"ammount\": " + String.Format("{0:0.00}", lm.ammount) + "}";
-                        coma++;
-                        if (coma < a.transactons.Count)
-                            jContent += ",";
-                    }
-                }
+        //                jContent += "{\"to\": \"" + lm.to + "\", \"date\": \"" + lm.date + "\", " +
+        //                    "\"ammount\": " + String.Format("{0:0.00}", lm.ammount) + "}";
+        //                coma++;
+        //                if (coma < a.transactons.Count)
+        //                    jContent += ",";
+        //            }
+        //        }
 
-                jContent += "]}}\n";
-                accounts++;
-                if (accounts < list.Count)
-                    jContent += ",";
-            }
-            jContent += "]";
+        //        jContent += "]}}\n";
+        //        accounts++;
+        //        if (accounts < list.Count)
+        //            jContent += ",";
+        //    }
+        //    jContent += "]";
 
-            return jContent;
-        }
+        //    return jContent;
+        //}
         //END JSON::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -309,6 +309,11 @@ namespace ALWallet
         private void createSqliteDb() {
             string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "alwallet.sqlite");
             SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+
+            conn.CreateTable<Account>();
+            conn.CreateTable<TransactionMod>();
+            conn.CreateTable<DebtMod>();
+            conn.CreateTable<LendMod>();
         }
         //ENDSQLITE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     }
