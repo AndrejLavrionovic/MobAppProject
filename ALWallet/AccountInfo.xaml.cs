@@ -24,12 +24,6 @@ namespace ALWallet {
     public sealed partial class AccountInfo : Page {
 
         private App myApp;
-        private string accName;
-        private double curretn;
-        private double expenses;
-        private double income;
-        private double dept;
-        private double lend;
         private Account a;
         private DataContext dc;
 
@@ -76,6 +70,10 @@ namespace ALWallet {
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e) {
             splSideMenu.IsPaneOpen = !splSideMenu.IsPaneOpen;
+        }
+
+        private void btnDeleteTrans_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 }
