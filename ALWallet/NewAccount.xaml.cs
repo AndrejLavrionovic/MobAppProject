@@ -119,9 +119,5 @@ namespace ALWallet {
             }
             else return true;
         }
-
-        private void addAccount(Account acc) {
-            DataContext dc = new DataContext();
-        }
     }
 }

@@ -32,6 +32,9 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        
+        
+        <!--:::::::::::::::::::::::::::::::::FORM IT SELF-->
         <StackPanel x:Name="spContainer"
                     Margin="50 0">
             <TextBlock x:Name="tblTitle"
@@ -67,6 +70,9 @@
                     <TextBox x:Name="tbxBalance" Width="100" InputScope="Number"/>
                 </StackPanel>
             </StackPanel>
+            
+            
+            <!--::::::::::::::::::::::::::::ERRORS::::::::::::::::::::::::::::::::-->
             <StackPanel x:Name="spErrors"
                         Background="#FFD1D1"
                         Opacity="1.0"
@@ -76,6 +82,9 @@
                         Padding="20 10 20 0">
 
             </StackPanel>
+            
+            
+            <!--:::::::::::::::::::BUTTONS::::::::::::::::::::::::::::::::::::-->
             <StackPanel x:Name="btns"
                         Orientation="Horizontal"
                         Margin="0 40 0 0">

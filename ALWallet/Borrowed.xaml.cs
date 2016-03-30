@@ -65,35 +65,94 @@ namespace ALWallet {
 
         private void btnBorrow_Click(object sender, RoutedEventArgs e) {
 
+            if (isValid()) {
+                DateTime d = dpDate.Date.DateTime;
+                double a = Convert.ToDouble(tbxAmmount.Text);
+                string from = tbxFrom.Text;
 
-            DateTime d = dpDate.Date.DateTime;
-            double a = Convert.ToDouble(tbxAmmount.Text);
-            string from = tbxFrom.Text;
+                dm = new DebtMod();
 
-            dm = new DebtMod();
+                dm.date = d;
+                dm.ammount = a;
+                dm.from = from;
+                dm.accid = myApp._accountId;
 
-            dm.date = d;
-            dm.ammount = a;
-            dm.from = from;
-            dm.accid = myApp._accountId;
+                if (dc.addDebt(dm) == 1) {
 
-            if (dc.addDebt(dm) == 1) {
+                    dpDate.Date = DateTime.Now;
+                    tbxAmmount.Text = "";
+                    tbxFrom.Text = "";
 
-                dpDate.Date = DateTime.Now;
-                tbxAmmount.Text = "";
-                tbxFrom.Text = "";
+                    Account acc = dc.getAccount(myApp._accountId);
+                    double current = acc.current;
+                    double newCurrent = current + a;
+                    acc.current = newCurrent;
 
-                Account acc = dc.getAccount(myApp._accountId);
-                double current = acc.current;
-                double newCurrent = current + a;
-                acc.current = newCurrent;
-
-                if (dc.updateAccount(acc) == 1) {
-                    TextBox tb = new TextBox();
-                    tb.Text = "Saved successfully.";
-                    spMsg.Children.Add(tb);
+                    if (dc.updateAccount(acc) == 1) {
+                        TextBox tb = new TextBox();
+                        tb.Text = "Saved successfully.";
+                        spMsg.Children.Add(tb);
+                    }
                 }
             }
+        }
+
+        private bool isValid() {
+
+
+
+            // check if spErrors is visible end make is not visible if it is.
+            // alse if spErrors has childs then remove all.
+            if (spErrors.Visibility == Visibility.Visible) {
+                spErrors.Visibility = Visibility.Collapsed;
+                spErrors.Children.Clear();
+            }
+
+            // validation
+            int err = 0;
+            bool[] error = { false, false, false };
+            double result = 0.00;
+            if (!Double.TryParse(tbxAmmount.Text, out result)) {
+                err++;
+                error[2] = true;
+            }
+            if (tbxAmmount.Text == "") {
+                err++;
+                error[0] = true;
+            }
+            if (tbxFrom.Text == "") {
+                err++;
+                error[1] = true;
+            }
+
+            if (err > 0) {
+                TextBlock tblErr;
+
+                if (error[0] == true) {
+                    tblErr = new TextBlock();
+                    tblErr.Text = "Enter ammount.";
+                    tblErr.Height = 30;
+
+                    spErrors.Children.Add(tblErr);
+                }
+                if (error[1] == true) {
+                    tblErr = new TextBlock();
+                    tblErr.Text = "Who you borrowed from?";
+                    tblErr.Height = 30;
+
+                    spErrors.Children.Add(tblErr);
+                }
+                if (error[2] == true) {
+                    tblErr = new TextBlock();
+                    tblErr.Text = "Bad ammount value. Number must be entered.";
+                    tblErr.Height = 30;
+
+                    spErrors.Children.Add(tblErr);
+                }
+                spErrors.Visibility = Visibility.Visible;
+                return false;
+            }
+            else return true;
         }
     }
 }

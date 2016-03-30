@@ -141,6 +141,18 @@
                            Width="200" HorizontalAlignment="Left"/>
                 <TextBox x:Name="tbxDescription" Width="250" HorizontalAlignment="Left" />
             </StackPanel>
+            
+            
+            <!--::::::::::::::::::::::::::::ERRORS::::::::::::::::::::::::::::::::-->
+            <StackPanel x:Name="spErrors"
+                        Background="#FFD1D1"
+                        Opacity="1.0"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Center"
+                        Margin="0 20 0 0"
+                        Width="500"
+                        Padding="20 10 20 0">
+            </StackPanel>
 
             <StackPanel x:Name="spButtons"
                         Orientation="Horizontal"

@@ -239,7 +239,6 @@ C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\HomePage.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Lent.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\MainPage.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\NewAccount.xbf
-C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\sqlite.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Transactions.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.xr.xml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.exe
@@ -372,8 +371,6 @@ C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\MainPage.g.i.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\MainPage.g.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\NewAccount.g.i.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\NewAccount.g.cs
-C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\sqlite.g.i.cs
-C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\sqlite.g.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Transactions.g.i.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Transactions.g.cs
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\XamlTypeInfo.g.cs
@@ -384,7 +381,6 @@ C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\HomePage.xaml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Lent.xaml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\MainPage.xaml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\NewAccount.xaml
-C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\sqlite.xaml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Transactions.xaml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\App.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\AccountInfo.xbf
@@ -393,7 +389,6 @@ C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\HomePage.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Lent.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\MainPage.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\NewAccount.xbf
-C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\sqlite.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\Transactions.xbf
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\ALWallet.exe

@@ -70,13 +70,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <RelativePanel>
-            <Button x:ConnectionId='33' x:Name="btnHamburger"
+            <Button x:ConnectionId='34' x:Name="btnHamburger"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE700;"
                     FontSize="36"
                                               
                     />
-            <TextBlock x:ConnectionId='34' x:Name="tblAccountName"
+            <TextBlock x:ConnectionId='35' x:Name="tblAccountName"
                        FontFamily="Verdana"
                        FontSize="36"
                        FontWeight="Normal"
@@ -100,9 +100,9 @@
             <StackPanel x:ConnectionId='14' x:Name="spDate"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock x:ConnectionId='31' x:Name="textBlock" Text="Date:" 
+                <TextBlock x:ConnectionId='32' x:Name="textBlock" Text="Date:" 
                            Width="200"/>
-                <DatePicker x:ConnectionId='32' HorizontalAlignment="Stretch"
+                <DatePicker x:ConnectionId='33' HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             x:Name="dpDate" Width="250"/>
             </StackPanel>
@@ -110,9 +110,9 @@
             <StackPanel x:ConnectionId='15' x:Name="spAmmount"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock x:ConnectionId='29' x:Name="textBlock1" Text="Ammount:" 
+                <TextBlock x:ConnectionId='30' x:Name="textBlock1" Text="Ammount:" 
                            Width="200" HorizontalAlignment="Left"/>
-                <TextBox x:ConnectionId='30' x:Name="tbxAmmount"
+                <TextBox x:ConnectionId='31' x:Name="tbxAmmount"
                          Width="250" HorizontalAlignment="Left"
                          />
             </StackPanel>
@@ -120,14 +120,14 @@
             <StackPanel x:ConnectionId='16' x:Name="spCategory"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock x:ConnectionId='24' x:Name="textBlock2" Text="Category:" 
+                <TextBlock x:ConnectionId='25' x:Name="textBlock2" Text="Category:" 
                            Width="200" HorizontalAlignment="Left"/>
-                <ComboBox x:ConnectionId='25' x:Name="cbCategory" Width="250"                                  >
+                <ComboBox x:ConnectionId='26' x:Name="cbCategory" Width="250"                                  >
                     <ComboBox.ItemTemplate>
                         <DataTemplate                             >
-                            <StackPanel x:ConnectionId='26'>
-                                <TextBlock x:ConnectionId='27'                     />
-                                <TextBlock x:ConnectionId='28'                    Visibility="Collapsed"/>
+                            <StackPanel x:ConnectionId='27'>
+                                <TextBlock x:ConnectionId='28'                     />
+                                <TextBlock x:ConnectionId='29'                    Visibility="Collapsed"/>
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
@@ -137,26 +137,38 @@
             <StackPanel x:ConnectionId='17' x:Name="spDescription"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock x:ConnectionId='22' x:Name="textBlock3" Text="Description:" 
+                <TextBlock x:ConnectionId='23' x:Name="textBlock3" Text="Description:" 
                            Width="200" HorizontalAlignment="Left"/>
-                <TextBox x:ConnectionId='23' x:Name="tbxDescription" Width="250" HorizontalAlignment="Left" />
+                <TextBox x:ConnectionId='24' x:Name="tbxDescription" Width="250" HorizontalAlignment="Left" />
+            </StackPanel>
+            
+            
+            <!--::::::::::::::::::::::::::::ERRORS::::::::::::::::::::::::::::::::-->
+            <StackPanel x:ConnectionId='18' x:Name="spErrors"
+                        Background="#FFD1D1"
+                        Opacity="1.0"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Center"
+                        Margin="0 20 0 0"
+                        Width="500"
+                        Padding="20 10 20 0">
             </StackPanel>
 
-            <StackPanel x:ConnectionId='18' x:Name="spButtons"
+            <StackPanel x:ConnectionId='19' x:Name="spButtons"
                         Orientation="Horizontal"
                         Margin="200 40 20 20">
-                <Button x:ConnectionId='20' x:Name="btnW"
+                <Button x:ConnectionId='21' x:Name="btnW"
                         Content="Withdraw"
                         Width="146"
                         Margin="0 0 8 0"
                         BorderBrush="Red"                   />
-                <Button x:ConnectionId='21'  x:Name="btnD"
+                <Button x:ConnectionId='22'  x:Name="btnD"
                         Content="Deposit"
                         Width="146"
                          BorderBrush="Green"                   />
             </StackPanel>
 
-            <StackPanel x:ConnectionId='19' x:Name="spMsg"
+            <StackPanel x:ConnectionId='20' x:Name="spMsg"
                         Orientation="Vertical"
                         Margin="0 20 0 0"/>
 
