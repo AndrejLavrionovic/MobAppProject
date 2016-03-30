@@ -69,6 +69,9 @@ namespace ALWallet {
             else if (lbiLend.IsSelected) {
                 this.Frame.Navigate(typeof(Lent));
             }
+            else if (lbiSqlite.IsSelected) {
+                this.Frame.Navigate(typeof(sqlite));
+            }
         }
 
         private void btnHamburger_Click(object sender, RoutedEventArgs e) {

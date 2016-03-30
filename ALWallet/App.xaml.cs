@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using SQLite.Net;
 using ALWallet.Model;
+using Windows.UI.Popups;
 
 namespace ALWallet
 {
@@ -125,6 +126,24 @@ namespace ALWallet
             conn.CreateTable<TransactionMod>();
             conn.CreateTable<DebtMod>();
             conn.CreateTable<LendMod>();
+
+            try {
+
+                List<Categories> cats = (from c in conn.Table<Categories>()
+                                         select c).ToList();
+
+                if (cats.Count == 0) {
+                    Categories c = new Categories();
+                    List<string> names = c.getListOfCategories();
+                    foreach(string name in names) {
+                        c = new Categories(name);
+                        conn.Insert(c);
+                    }
+                }
+            }
+            catch (SQLiteException) {
+
+            }
         }
         //ENDSQLITE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     }
