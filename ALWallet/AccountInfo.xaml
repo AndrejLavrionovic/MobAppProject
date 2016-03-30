@@ -194,6 +194,20 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
+                    <ListBoxItem Name="lbiSqlite">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE822;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="SQLite management"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
 
