@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>3d181087-0693-468a-a719-349104ef0f3b</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\ALWallet.exe">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.exe">
       <PackagePath>entrypoint\ALWallet.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -348,55 +348,55 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.11.1\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\img\button_main_pushed_100.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\img\button_main_pushed_100.png">
       <PackagePath>Assets\img\button_main_pushed_100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\img\coins_bg_2.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\img\coins_bg_2.png">
       <PackagePath>Assets\img\coins_bg_2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\ALWallet.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.xr.xml">
       <PackagePath>ALWallet.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\Core\ALWallet.exe">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\ALWallet.exe">
       <PackagePath>ALWallet.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

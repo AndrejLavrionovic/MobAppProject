@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>3d181087-0693-468a-a719-349104ef0f3b</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\obj\x86\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>5748FDD17AAB585F409777FC3633FFD6914DBDC750AA6935624753C58871CE2E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>3d181087-0693-468a-a719-349104ef0f3b_1.0.0.0_x86__w8ahppsqxb90e</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>3d181087-0693-468a-a719-349104ef0f3b_w8ahppsqxb90e!App</RegisteredUserModeAppID>
@@ -19,16 +19,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-03-30T13:44:52.035</Modified>
+      <Modified>2016-03-30T14:08:24.756</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\ALWallet.exe">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.exe">
       <PackagePath>entrypoint\ALWallet.exe</PackagePath>
-      <Modified>2016-03-30T13:44:50.473</Modified>
+      <Modified>2016-03-30T14:08:22.408</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -466,71 +466,71 @@
       <PackagePath>sqlite3.dll</PackagePath>
       <Modified>2016-03-27T13:53:04.970</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2016-03-30T11:01:12.780</Modified>
+      <Modified>2016-03-30T14:07:19.822</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\img\button_main_pushed_100.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\img\button_main_pushed_100.png">
       <PackagePath>Assets\img\button_main_pushed_100.png</PackagePath>
-      <Modified>2016-03-30T12:01:52.674</Modified>
+      <Modified>2016-03-30T14:07:19.831</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\img\coins_bg_2.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\img\coins_bg_2.png">
       <PackagePath>Assets\img\coins_bg_2.png</PackagePath>
-      <Modified>2016-03-30T12:01:52.775</Modified>
+      <Modified>2016-03-30T14:07:19.836</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.826</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.827</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.828</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.828</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T21:09:42.000</Modified>
+      <Modified>2016-03-30T14:07:19.829</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-03-30T11:01:01.479</Modified>
+      <Modified>2016-03-30T14:07:19.855</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\ALWallet.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.xr.xml">
       <PackagePath>ALWallet.xr.xml</PackagePath>
-      <Modified>2016-03-30T12:51:56.660</Modified>
+      <Modified>2016-03-30T14:07:20.547</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2016-01-28T18:09:01.045</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-03-30T13:44:51.471</Modified>
+      <Modified>2016-03-30T14:08:24.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\bin\x86\Debug\Core\ALWallet.exe">
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\ALWallet.exe">
       <PackagePath>ALWallet.exe</PackagePath>
-      <Modified>2016-03-30T13:44:52.032</Modified>
+      <Modified>2016-03-30T14:08:24.753</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

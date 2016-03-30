@@ -1,1 +1,1 @@
-C:\Users\Andrei\Desktop\MobApp\prj\ALWallet\ALWallet.csproj;x86
+C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\ALWallet.csproj;x86
