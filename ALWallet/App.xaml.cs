@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using SQLite.Net;
+using ALWallet.Model;
 
 namespace ALWallet
 {
@@ -70,6 +72,8 @@ namespace ALWallet
                     //TODO: Load state from previously suspended application
                 }
 
+                createSqliteDb();
+
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
@@ -108,5 +112,20 @@ namespace ALWallet
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        //SQLITE
+        private void createSqliteDb() {
+            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db1.sqlite");
+            SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+
+            conn.CreateTable<Account>();
+            conn.CreateTable<Categories>();
+            conn.CreateTable<TransactionMod>();
+            conn.CreateTable<DebtMod>();
+            conn.CreateTable<LendMod>();
+        }
+        //ENDSQLITE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     }
 }
