@@ -104,6 +104,7 @@
     <Compile Include="Borrowed.xaml.cs">
       <DependentUpon>Borrowed.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\DataContext.cs" />
     <Compile Include="Converter\StringFormatConverter.cs" />
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
