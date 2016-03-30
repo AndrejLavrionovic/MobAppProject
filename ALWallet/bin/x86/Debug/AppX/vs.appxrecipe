@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-03-30T16:21:52.894</Modified>
+      <Modified>2016-03-30T16:25:53.440</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.exe">
       <PackagePath>entrypoint\ALWallet.exe</PackagePath>
-      <Modified>2016-03-30T16:21:51.651</Modified>
+      <Modified>2016-03-30T16:25:52.163</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -518,7 +518,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\ALWallet.xr.xml">
       <PackagePath>ALWallet.xr.xml</PackagePath>
-      <Modified>2016-03-30T16:09:09.984</Modified>
+      <Modified>2016-03-30T16:24:14.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -526,11 +526,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-03-30T16:21:52.567</Modified>
+      <Modified>2016-03-30T16:25:53.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\MobApp\pr2\ALWallet\bin\x86\Debug\Core\ALWallet.exe">
       <PackagePath>ALWallet.exe</PackagePath>
-      <Modified>2016-03-30T16:21:52.886</Modified>
+      <Modified>2016-03-30T16:25:53.437</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
