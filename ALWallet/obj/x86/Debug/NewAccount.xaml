@@ -8,9 +8,33 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource bg}">
-        <StackPanel x:ConnectionId='1' x:Name="spContainer"
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="VisualStateGroup">
+                <VisualState x:ConnectionId='2' x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="tblTitle.(TextBlock.FontSize)" Value="21.333"/>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="120"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel x:ConnectionId='5' x:Name="spContainer"
                     Margin="50 0">
-            <TextBlock x:ConnectionId='2' x:Name="tblTitle"
+            <TextBlock x:ConnectionId='6' x:Name="tblTitle"
                        Text="Create new Account"
                        Margin="0 100 0 50"
                        FontFamily="Verdana"
@@ -18,32 +42,32 @@
                        FontWeight="Normal"
                        Foreground="#3F3F3F"
                        />
-            <StackPanel x:ConnectionId='3' x:Name="spNewAccount"
+            <StackPanel x:ConnectionId='7' x:Name="spNewAccount"
                         Margin="0 0 0 0"
                         Orientation="Vertical">
-                <StackPanel x:ConnectionId='8' x:Name="spAccName"
+                <StackPanel x:ConnectionId='12' x:Name="spAccName"
                             Orientation="Horizontal"
                             Margin="0 0 0 20">
-                    <TextBlock Width="220"
+                    <TextBlock x:ConnectionId='16' x:Name="textBlock" Width="220"
                                Text="Account Name:"
                                FontFamily="Calibri"
                                FontWeight="SemiBold"
                                Foreground="#454545" VerticalAlignment="Center"
                                />
-                    <TextBox x:ConnectionId='11' x:Name="tbxAccount"  Width="200"/>
+                    <TextBox x:ConnectionId='17' x:Name="tbxAccount"  Width="200"/>
                 </StackPanel>
-                <StackPanel x:ConnectionId='9' x:Name="spBalance"
+                <StackPanel x:ConnectionId='13' x:Name="spBalance"
                             Orientation="Horizontal">
-                    <TextBlock Width="220" 
-                               Text="Starting Balance"
+                    <TextBlock x:ConnectionId='14' x:Name="textBlock1" Width="220" 
+                               Text="Starting Balance:"
                                FontFamily="Calibri"
                                FontWeight="SemiBold"
                                Foreground="#454545" VerticalAlignment="Center"
                                />
-                    <TextBox x:ConnectionId='10' x:Name="tbxBalance" Width="100" InputScope="Number"/>
+                    <TextBox x:ConnectionId='15' x:Name="tbxBalance" Width="100" InputScope="Number"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel x:ConnectionId='4' x:Name="spErrors"
+            <StackPanel x:ConnectionId='8' x:Name="spErrors"
                         Background="#FFD1D1"
                         Opacity="1.0"
                         Visibility="Collapsed"
@@ -52,13 +76,13 @@
                         Padding="20 10 20 0">
 
             </StackPanel>
-            <StackPanel x:ConnectionId='5' x:Name="btns"
+            <StackPanel x:ConnectionId='9' x:Name="btns"
                         Orientation="Horizontal"
                         Margin="0 40 0 0">
-                <Button x:ConnectionId='6' x:Name="btnCreate"
+                <Button x:ConnectionId='10' x:Name="btnCreate"
                         Content="Create New Account"                        
                         />
-                <Button x:ConnectionId='7' x:Name="btnBack"
+                <Button x:ConnectionId='11' x:Name="btnBack"
                         Content="Back"
                         Margin="10 0 0 0"                      
                         />

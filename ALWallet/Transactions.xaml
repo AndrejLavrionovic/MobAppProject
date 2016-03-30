@@ -7,9 +7,64 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:ALWallet.Model"
     mc:Ignorable="d">
-    
-    
+
+
     <Grid Background="{StaticResource bg}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="spDate.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spAmmount.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spCategory.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spDescription.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spButtons.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="dpDate.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="spButtons.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="btnW.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnD.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnW.(Control.FontSize)" Value="13.333"/>
+                        <Setter Target="btnD.(Control.FontSize)" Value="13.333"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="dpDate.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="tbxAmmount.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="cbCategory.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="tbxDescription.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>120,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnW.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnD.(FrameworkElement.Width)" Value="100"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -45,29 +100,29 @@
             <StackPanel x:Name="spDate"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Date:" 
+                <TextBlock x:Name="textBlock" Text="Date:" 
                            Width="200"/>
                 <DatePicker HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            x:Name="dpDate"/>
+                            x:Name="dpDate" Width="250"/>
             </StackPanel>
-            
+
             <StackPanel x:Name="spAmmount"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Ammount:" 
-                           Width="200"/>
+                <TextBlock x:Name="textBlock1" Text="Ammount:" 
+                           Width="200" HorizontalAlignment="Left"/>
                 <TextBox x:Name="tbxAmmount"
-                         Width="296"
+                         Width="250" HorizontalAlignment="Left"
                          />
             </StackPanel>
-            
+
             <StackPanel x:Name="spCategory"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Category:" 
-                           Width="200"/>
-                <ComboBox x:Name="cbCategory" Width="296" ItemsSource="{x:Bind categories}">
+                <TextBlock x:Name="textBlock2" Text="Category:" 
+                           Width="200" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="cbCategory" Width="250" ItemsSource="{x:Bind categories}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate x:DataType="data:Categories">
                             <StackPanel>
@@ -78,15 +133,15 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
-            
+
             <StackPanel x:Name="spDescription"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Description:" 
-                           Width="200"/>
-                <TextBox x:Name="tbxDescription" Width="296" />
+                <TextBlock x:Name="textBlock3" Text="Description:" 
+                           Width="200" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbxDescription" Width="250" HorizontalAlignment="Left" />
             </StackPanel>
-            
+
             <StackPanel x:Name="spButtons"
                         Orientation="Horizontal"
                         Margin="200 40 20 20">
@@ -100,7 +155,7 @@
                         Width="146"
                          BorderBrush="Green" Click="btnD_Click"/>
             </StackPanel>
-            
+
             <StackPanel x:Name="spMsg"
                         Orientation="Vertical"
                         Margin="0 20 0 0"/>
@@ -198,5 +253,5 @@
 
         </SplitView>
     </Grid>
-    
+
 </Page>

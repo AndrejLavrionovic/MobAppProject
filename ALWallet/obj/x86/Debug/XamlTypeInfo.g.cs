@@ -132,33 +132,37 @@ namespace ALWallet.ALWallet_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[12];
+            _typeNameTable = new string[14];
             _typeNameTable[0] = "ALWallet.AccountInfo";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "ALWallet.Borrowed";
-            _typeNameTable[4] = "ALWallet.Converter.StringFormatConverter";
+            _typeNameTable[3] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[4] = "System.ValueType";
             _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "ALWallet.HomePage";
-            _typeNameTable[7] = "ALWallet.Lent";
-            _typeNameTable[8] = "ALWallet.MainPage";
-            _typeNameTable[9] = "ALWallet.NewAccount";
-            _typeNameTable[10] = "ALWallet.sqlite";
-            _typeNameTable[11] = "ALWallet.Transactions";
+            _typeNameTable[6] = "ALWallet.Borrowed";
+            _typeNameTable[7] = "ALWallet.Converter.StringFormatConverter";
+            _typeNameTable[8] = "ALWallet.HomePage";
+            _typeNameTable[9] = "ALWallet.Lent";
+            _typeNameTable[10] = "ALWallet.MainPage";
+            _typeNameTable[11] = "ALWallet.NewAccount";
+            _typeNameTable[12] = "ALWallet.sqlite";
+            _typeNameTable[13] = "ALWallet.Transactions";
 
-            _typeTable = new global::System.Type[12];
+            _typeTable = new global::System.Type[14];
             _typeTable[0] = typeof(global::ALWallet.AccountInfo);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::ALWallet.Borrowed);
-            _typeTable[4] = typeof(global::ALWallet.Converter.StringFormatConverter);
+            _typeTable[3] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[4] = typeof(global::System.ValueType);
             _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::ALWallet.HomePage);
-            _typeTable[7] = typeof(global::ALWallet.Lent);
-            _typeTable[8] = typeof(global::ALWallet.MainPage);
-            _typeTable[9] = typeof(global::ALWallet.NewAccount);
-            _typeTable[10] = typeof(global::ALWallet.sqlite);
-            _typeTable[11] = typeof(global::ALWallet.Transactions);
+            _typeTable[6] = typeof(global::ALWallet.Borrowed);
+            _typeTable[7] = typeof(global::ALWallet.Converter.StringFormatConverter);
+            _typeTable[8] = typeof(global::ALWallet.HomePage);
+            _typeTable[9] = typeof(global::ALWallet.Lent);
+            _typeTable[10] = typeof(global::ALWallet.MainPage);
+            _typeTable[11] = typeof(global::ALWallet.NewAccount);
+            _typeTable[12] = typeof(global::ALWallet.sqlite);
+            _typeTable[13] = typeof(global::ALWallet.Transactions);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -194,14 +198,14 @@ namespace ALWallet.ALWallet_XamlTypeInfo
         }
 
         private object Activate_0_AccountInfo() { return new global::ALWallet.AccountInfo(); }
-        private object Activate_3_Borrowed() { return new global::ALWallet.Borrowed(); }
-        private object Activate_4_StringFormatConverter() { return new global::ALWallet.Converter.StringFormatConverter(); }
-        private object Activate_6_HomePage() { return new global::ALWallet.HomePage(); }
-        private object Activate_7_Lent() { return new global::ALWallet.Lent(); }
-        private object Activate_8_MainPage() { return new global::ALWallet.MainPage(); }
-        private object Activate_9_NewAccount() { return new global::ALWallet.NewAccount(); }
-        private object Activate_10_sqlite() { return new global::ALWallet.sqlite(); }
-        private object Activate_11_Transactions() { return new global::ALWallet.Transactions(); }
+        private object Activate_6_Borrowed() { return new global::ALWallet.Borrowed(); }
+        private object Activate_7_StringFormatConverter() { return new global::ALWallet.Converter.StringFormatConverter(); }
+        private object Activate_8_HomePage() { return new global::ALWallet.HomePage(); }
+        private object Activate_9_Lent() { return new global::ALWallet.Lent(); }
+        private object Activate_10_MainPage() { return new global::ALWallet.MainPage(); }
+        private object Activate_11_NewAccount() { return new global::ALWallet.NewAccount(); }
+        private object Activate_12_sqlite() { return new global::ALWallet.sqlite(); }
+        private object Activate_13_Transactions() { return new global::ALWallet.Transactions(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -228,17 +232,13 @@ namespace ALWallet.ALWallet_XamlTypeInfo
                 xamlType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  ALWallet.Borrowed
-                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_Borrowed;
-                userType.SetIsLocalType();
+            case 3:   //  Windows.UI.Text.FontWeight
+                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 4:   //  ALWallet.Converter.StringFormatConverter
+            case 4:   //  System.ValueType
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_4_StringFormatConverter;
-                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -246,44 +246,58 @@ namespace ALWallet.ALWallet_XamlTypeInfo
                 xamlType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  ALWallet.HomePage
+            case 6:   //  ALWallet.Borrowed
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_HomePage;
+                userType.Activator = Activate_6_Borrowed;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  ALWallet.Lent
-                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_Lent;
+            case 7:   //  ALWallet.Converter.StringFormatConverter
+                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_7_StringFormatConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  ALWallet.MainPage
+            case 8:   //  ALWallet.HomePage
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_MainPage;
+                userType.Activator = Activate_8_HomePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  ALWallet.NewAccount
+            case 9:   //  ALWallet.Lent
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_NewAccount;
+                userType.Activator = Activate_9_Lent;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  ALWallet.sqlite
+            case 10:   //  ALWallet.MainPage
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_sqlite;
+                userType.Activator = Activate_10_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  ALWallet.Transactions
+            case 11:   //  ALWallet.NewAccount
                 userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_Transactions;
+                userType.Activator = Activate_11_NewAccount;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  ALWallet.sqlite
+                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_sqlite;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  ALWallet.Transactions
+                userType = new global::ALWallet.ALWallet_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_13_Transactions;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -7,21 +7,76 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:ALWallet.Model"
     mc:Ignorable="d">
-    
-    
+
+
     <Grid Background="{StaticResource bg}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup">
+                <VisualState x:ConnectionId='3' x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="spDate.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spAmmount.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spCategory.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spDescription.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="spButtons.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="dpDate.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="spButtons.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="btnW.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnD.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnW.(Control.FontSize)" Value="13.333"/>
+                        <Setter Target="btnD.(Control.FontSize)" Value="13.333"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="dpDate.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="tbxAmmount.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="cbCategory.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="tbxDescription.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>120,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnW.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="btnD.(FrameworkElement.Width)" Value="100"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='5' x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <RelativePanel>
-            <Button x:ConnectionId='25' x:Name="btnHamburger"
+            <Button x:ConnectionId='33' x:Name="btnHamburger"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE700;"
                     FontSize="36"
                                               
                     />
-            <TextBlock x:ConnectionId='26' x:Name="tblAccountName"
+            <TextBlock x:ConnectionId='34' x:Name="tblAccountName"
                        FontFamily="Verdana"
                        FontSize="36"
                        FontWeight="Normal"
@@ -31,7 +86,7 @@
         </RelativePanel>
 
         <!--:::::::::::::::::::::::::::::::::::MAIN AREA::::::::::::::::::::::::::::::::::::::::::-->
-        <StackPanel x:ConnectionId='2' x:Name="spMain"
+        <StackPanel x:ConnectionId='6' x:Name="spMain"
                     Grid.Row="1"
                     Orientation="Vertical"
                     Margin="150, 50, 20, 20"
@@ -42,66 +97,66 @@
                        FontWeight="Normal"
                        Foreground="#404040"
                        />
-            <StackPanel x:ConnectionId='10' x:Name="spDate"
+            <StackPanel x:ConnectionId='14' x:Name="spDate"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Date:" 
+                <TextBlock x:ConnectionId='31' x:Name="textBlock" Text="Date:" 
                            Width="200"/>
-                <DatePicker x:ConnectionId='24' HorizontalAlignment="Stretch"
+                <DatePicker x:ConnectionId='32' HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            x:Name="dpDate"/>
+                            x:Name="dpDate" Width="250"/>
             </StackPanel>
-            
-            <StackPanel x:ConnectionId='11' x:Name="spAmmount"
+
+            <StackPanel x:ConnectionId='15' x:Name="spAmmount"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Ammount:" 
-                           Width="200"/>
-                <TextBox x:ConnectionId='23' x:Name="tbxAmmount"
-                         Width="296"
+                <TextBlock x:ConnectionId='29' x:Name="textBlock1" Text="Ammount:" 
+                           Width="200" HorizontalAlignment="Left"/>
+                <TextBox x:ConnectionId='30' x:Name="tbxAmmount"
+                         Width="250" HorizontalAlignment="Left"
                          />
             </StackPanel>
-            
-            <StackPanel x:ConnectionId='12' x:Name="spCategory"
+
+            <StackPanel x:ConnectionId='16' x:Name="spCategory"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Category:" 
-                           Width="200"/>
-                <ComboBox x:ConnectionId='19' x:Name="cbCategory" Width="296"                                  >
+                <TextBlock x:ConnectionId='24' x:Name="textBlock2" Text="Category:" 
+                           Width="200" HorizontalAlignment="Left"/>
+                <ComboBox x:ConnectionId='25' x:Name="cbCategory" Width="250"                                  >
                     <ComboBox.ItemTemplate>
                         <DataTemplate                             >
-                            <StackPanel x:ConnectionId='20'>
-                                <TextBlock x:ConnectionId='21'                     />
-                                <TextBlock x:ConnectionId='22'                    Visibility="Collapsed"/>
+                            <StackPanel x:ConnectionId='26'>
+                                <TextBlock x:ConnectionId='27'                     />
+                                <TextBlock x:ConnectionId='28'                    Visibility="Collapsed"/>
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
-            
-            <StackPanel x:ConnectionId='13' x:Name="spDescription"
+
+            <StackPanel x:ConnectionId='17' x:Name="spDescription"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Description:" 
-                           Width="200"/>
-                <TextBox x:ConnectionId='18' x:Name="tbxDescription" Width="296" />
+                <TextBlock x:ConnectionId='22' x:Name="textBlock3" Text="Description:" 
+                           Width="200" HorizontalAlignment="Left"/>
+                <TextBox x:ConnectionId='23' x:Name="tbxDescription" Width="250" HorizontalAlignment="Left" />
             </StackPanel>
-            
-            <StackPanel x:ConnectionId='14' x:Name="spButtons"
+
+            <StackPanel x:ConnectionId='18' x:Name="spButtons"
                         Orientation="Horizontal"
                         Margin="200 40 20 20">
-                <Button x:ConnectionId='16' x:Name="btnW"
+                <Button x:ConnectionId='20' x:Name="btnW"
                         Content="Withdraw"
                         Width="146"
                         Margin="0 0 8 0"
                         BorderBrush="Red"                   />
-                <Button x:ConnectionId='17'  x:Name="btnD"
+                <Button x:ConnectionId='21'  x:Name="btnD"
                         Content="Deposit"
                         Width="146"
                          BorderBrush="Green"                   />
             </StackPanel>
-            
-            <StackPanel x:ConnectionId='15' x:Name="spMsg"
+
+            <StackPanel x:ConnectionId='19' x:Name="spMsg"
                         Orientation="Vertical"
                         Margin="0 20 0 0"/>
 
@@ -111,7 +166,7 @@
         </StackPanel>
         <!--::::::::::::::::::::::::::::::::END OF MAIN AREA::::::::::::::::::::::::::::::::::::::-->
 
-        <SplitView x:ConnectionId='3' x:Name="splSideMenu"
+        <SplitView x:ConnectionId='7' x:Name="splSideMenu"
                    Grid.Row="1"
                    DisplayMode="CompactOverlay"
                    OpenPaneLength="300"
@@ -119,11 +174,11 @@
                    HorizontalAlignment="Left">
 
             <SplitView.Pane>
-                <ListBox x:ConnectionId='4' SelectionMode="Single"
+                <ListBox x:ConnectionId='8' SelectionMode="Single"
                          x:Name="lbIcons"
                                                                     
                          Background="#9BFFA7">
-                    <ListBoxItem x:ConnectionId='5' Name="lbiHome">
+                    <ListBoxItem x:ConnectionId='9' Name="lbiHome">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -137,7 +192,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='6' Name="lbiTransactions">
+                    <ListBoxItem x:ConnectionId='10' Name="lbiTransactions">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -151,7 +206,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='7' Name="lbiBorrow">
+                    <ListBoxItem x:ConnectionId='11' Name="lbiBorrow">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -165,7 +220,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='8' Name="lbiLend">
+                    <ListBoxItem x:ConnectionId='12' Name="lbiLend">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -179,7 +234,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='9' Name="lbiBack">
+                    <ListBoxItem x:ConnectionId='13' Name="lbiBack">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -198,6 +253,6 @@
 
         </SplitView>
     </Grid>
-    
+
 </Page>
 

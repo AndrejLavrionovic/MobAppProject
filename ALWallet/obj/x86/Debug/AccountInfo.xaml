@@ -8,18 +8,78 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource bg}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="VisualStateGroup">
+                <VisualState x:ConnectionId='2' x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblBalance.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblExpenses.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblIncome.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblDebt.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblLend.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock.(TextBlock.Text)" Value="Expenses:"/>
+                        <Setter Target="textBlock1.(TextBlock.Text)" Value="Income:"/>
+                        <Setter Target="spMain.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>150,50,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblBalance.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblExpenses.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblIncome.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblDebt.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblLend.(TextBlock.FontSize)" Value="18.667"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <RelativePanel>
-            <Button x:ConnectionId='15' x:Name="btnHamburger"
+            <Button x:ConnectionId='24' x:Name="btnHamburger"
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE700;"
                     FontSize="36"
                                               
                     />
-            <TextBlock x:ConnectionId='16' x:Name="tblAccountName"
+            <TextBlock x:ConnectionId='25' x:Name="tblAccountName"
                        FontFamily="Verdana"
                        FontSize="36"
                        FontWeight="Normal"
@@ -29,19 +89,19 @@
         </RelativePanel>
 
         <!--:::::::::::::::::::::::::::::::::Main Area::::::::::::::::::::::::::::::::::-->
-        <StackPanel x:ConnectionId='1' x:Name="spMain"
+        <StackPanel x:ConnectionId='5' x:Name="spMain"
                     Grid.Row="1"
                     Orientation="Vertical"
                     Margin="150, 50, 20, 20">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Balance:"
+                <TextBlock x:ConnectionId='22' x:Name="textBlock4" Text="Balance:"
                            Width="300"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="Normal"
                            Foreground="#404040"
                        />
-                <TextBlock x:ConnectionId='14' x:Name="tblBalance"
+                <TextBlock x:ConnectionId='23' x:Name="tblBalance"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="SemiBold"
@@ -50,14 +110,14 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0, 30, 0, 0">
-                <TextBlock Width="300"
+                <TextBlock x:ConnectionId='20' x:Name="textBlock" Width="300"
                            Text="Expenses in current month:"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="Normal"
                            Foreground="#404040"
                        />
-                <TextBlock x:ConnectionId='13' x:Name="tblExpenses"
+                <TextBlock x:ConnectionId='21' x:Name="tblExpenses"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="SemiBold"
@@ -65,14 +125,14 @@
                            />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="300"
+                <TextBlock x:ConnectionId='18' x:Name="textBlock1" Width="300"
                            Text="Income in current month:"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="Normal"
                            Foreground="#404040"
                        />
-                <TextBlock x:ConnectionId='12' x:Name="tblIncome"
+                <TextBlock x:ConnectionId='19' x:Name="tblIncome"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="SemiBold"
@@ -81,28 +141,28 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0, 30, 0, 0">
-                <TextBlock Width="300"
+                <TextBlock x:ConnectionId='16' x:Name="textBlock2" Width="300"
                            Text="Debt:"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="Normal"
                            Foreground="#404040"
                        />
-                <TextBlock x:ConnectionId='11' x:Name="tblDebt"
+                <TextBlock x:ConnectionId='17' x:Name="tblDebt"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="SemiBold"
                            Foreground="#303030"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="300"
+                <TextBlock x:ConnectionId='14' x:Name="textBlock3" Width="300"
                            Text="Lent:"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="Normal"
                            Foreground="#404040"
                        />
-                <TextBlock x:ConnectionId='10' x:Name="tblLend"
+                <TextBlock x:ConnectionId='15' x:Name="tblLend"
                            FontFamily="Arial"
                            FontSize="22"
                            FontWeight="SemiBold"
@@ -112,7 +172,7 @@
         </StackPanel>
         <!--::::::::::::::::::::::::::::::::END OF MAIN AREA::::::::::::::::::::::::::::::-->
 
-        <SplitView x:ConnectionId='2' x:Name="splSideMenu"
+        <SplitView x:ConnectionId='6' x:Name="splSideMenu"
                    Grid.Row="1"
                    DisplayMode="CompactOverlay"
                    OpenPaneLength="300"
@@ -120,11 +180,11 @@
                    HorizontalAlignment="Left">
 
             <SplitView.Pane>
-                <ListBox x:ConnectionId='3' SelectionMode="Single"
+                <ListBox x:ConnectionId='7' SelectionMode="Single"
                          x:Name="lbIcons"
                                                                     
                          Background="#9BFFA7">
-                    <ListBoxItem x:ConnectionId='4' Name="lbiHome">
+                    <ListBoxItem x:ConnectionId='8' Name="lbiHome">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -138,7 +198,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='5' Name="lbiTransactions">
+                    <ListBoxItem x:ConnectionId='9' Name="lbiTransactions">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -152,7 +212,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='6' Name="lbiBorrow">
+                    <ListBoxItem x:ConnectionId='10' Name="lbiBorrow">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -166,7 +226,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='7' Name="lbiLend">
+                    <ListBoxItem x:ConnectionId='11' Name="lbiLend">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -180,7 +240,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='8' Name="lbiBack">
+                    <ListBoxItem x:ConnectionId='12' Name="lbiBack">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"
@@ -194,7 +254,7 @@
                                    />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem x:ConnectionId='9' Name="lbiSqlite">
+                    <ListBoxItem x:ConnectionId='13' Name="lbiSqlite">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                             FontFamily="Segoe MDL2 Assets"

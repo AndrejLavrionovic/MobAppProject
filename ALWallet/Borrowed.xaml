@@ -8,6 +8,86 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource bg}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="textBlock.(TextBlock.FontFamily)">
+                            <Setter.Value>
+                                <FontFamily>Calibri</FontFamily>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="textBlock.(TextBlock.FontWeight)">
+                            <Setter.Value>
+                                <FontWeight>Normal</FontWeight>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="spDate.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="dpDate.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="spAmmount.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="textBlock1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="textBlock1.(TextBlock.FontFamily)">
+                            <Setter.Value>
+                                <FontFamily>Calibri</FontFamily>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="tbxAmmount.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="tbxAmmount.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="dpDate.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="spFrom.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="textBlock2.(TextBlock.FontFamily)">
+                            <Setter.Value>
+                                <FontFamily>Calibri</FontFamily>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="16"/>
+                        <Setter Target="textBlock2.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="tbxFrom.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
+                        <Setter Target="tbxFrom.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="spButtons.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>150,40,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="dpDate.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="tbxAmmount.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="tbxFrom.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="spMain.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>120,50,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -43,7 +123,7 @@
             <StackPanel x:Name="spDate"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Date:" 
+                <TextBlock x:Name="textBlock" Text="Date:" 
                            Width="200"/>
                 <DatePicker HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
@@ -52,7 +132,7 @@
             <StackPanel x:Name="spAmmount"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Ammount:" 
+                <TextBlock x:Name="textBlock1" Text="Ammount:" 
                            Width="200"/>
                 <TextBox x:Name="tbxAmmount"
                          Width="296"
@@ -61,7 +141,7 @@
             <StackPanel x:Name="spFrom"
                         Orientation="Horizontal"
                         Margin="0, 10, 0, 0">
-                <TextBlock Text="Borrowed from:" 
+                <TextBlock x:Name="textBlock2" Text="Borrowed from:" 
                            Width="200"/>
                 <TextBox x:Name="tbxFrom" Width="296" />
             </StackPanel>

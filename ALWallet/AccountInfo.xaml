@@ -8,6 +8,66 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource bg}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblBalance.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblExpenses.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblIncome.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblDebt.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="tblLend.(TextBlock.FontSize)" Value="17.333"/>
+                        <Setter Target="textBlock.(TextBlock.Text)" Value="Expenses:"/>
+                        <Setter Target="textBlock1.(TextBlock.Text)" Value="Income:"/>
+                        <Setter Target="spMain.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>150,50,20,20</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock2.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock3.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Width)" Value="250"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblBalance.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblExpenses.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblIncome.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblDebt.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="tblLend.(TextBlock.FontSize)" Value="18.667"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -34,7 +94,7 @@
                     Orientation="Vertical"
                     Margin="150, 50, 20, 20">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Balance:"
+                <TextBlock x:Name="textBlock4" Text="Balance:"
                            Width="300"
                            FontFamily="Arial"
                            FontSize="22"
@@ -50,7 +110,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0, 30, 0, 0">
-                <TextBlock Width="300"
+                <TextBlock x:Name="textBlock" Width="300"
                            Text="Expenses in current month:"
                            FontFamily="Arial"
                            FontSize="22"
@@ -65,7 +125,7 @@
                            />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="300"
+                <TextBlock x:Name="textBlock1" Width="300"
                            Text="Income in current month:"
                            FontFamily="Arial"
                            FontSize="22"
@@ -81,7 +141,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0, 30, 0, 0">
-                <TextBlock Width="300"
+                <TextBlock x:Name="textBlock2" Width="300"
                            Text="Debt:"
                            FontFamily="Arial"
                            FontSize="22"
@@ -95,7 +155,7 @@
                            Foreground="#303030"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="300"
+                <TextBlock x:Name="textBlock3" Width="300"
                            Text="Lent:"
                            FontFamily="Arial"
                            FontSize="22"
