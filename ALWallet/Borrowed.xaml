@@ -7,7 +7,170 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{StaticResource bg}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <Button x:Name="btnHamburger"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE700;"
+                    FontSize="36"
+                    Click="btnHamburger_Click"
+                    />
+            <TextBlock x:Name="tblAccountName"
+                       FontFamily="Verdana"
+                       FontSize="36"
+                       FontWeight="Normal"
+                       Foreground="#303030"
+                       Margin="100, 0, 0, 0"
+                       />
+        </RelativePanel>
 
+        <!--:::::::::::::::::::::::::::::::::::MAIN AREA::::::::::::::::::::::::::::::::::::::::::-->
+        <StackPanel x:Name="spMain"
+                    Grid.Row="1"
+                    Orientation="Vertical"
+                    Margin="150, 50, 20, 20"
+                    >
+            <TextBlock Text="Borrowed" 
+                       FontFamily="Verdana"
+                       FontSize="16"
+                       FontWeight="Normal"
+                       Foreground="#404040"
+                       />
+            <StackPanel x:Name="spDate"
+                        Orientation="Horizontal"
+                        Margin="0, 10, 0, 0">
+                <TextBlock Text="Date:" 
+                           Width="200"/>
+                <DatePicker HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            x:Name="dpDate"/>
+            </StackPanel>
+            <StackPanel x:Name="spAmmount"
+                        Orientation="Horizontal"
+                        Margin="0, 10, 0, 0">
+                <TextBlock Text="Ammount:" 
+                           Width="200"/>
+                <TextBox x:Name="tbxAmmount"
+                         Width="296"
+                         />
+            </StackPanel>
+            <StackPanel x:Name="spFrom"
+                        Orientation="Horizontal"
+                        Margin="0, 10, 0, 0">
+                <TextBlock Text="Borrowed from:" 
+                           Width="200"/>
+                <TextBox x:Name="tbxFrom" Width="296" />
+            </StackPanel>
+            <StackPanel x:Name="spButtons"
+                        Orientation="Horizontal"
+                        Margin="200 40 20 20">
+                <Button x:Name="btnBorrow"
+                        Content="Save"
+                        Width="146"
+                        Margin="0 0 8 0"
+                        BorderBrush="Red" Click="btnBorrow_Click"/>
+            </StackPanel>
+
+
+            <StackPanel x:Name="spMsg"
+                        Orientation="Vertical"
+                        Margin="0 20 0 0"/>
+
+
+
+
+        </StackPanel>
+        <!--::::::::::::::::::::::::::::::::END OF MAIN AREA::::::::::::::::::::::::::::::::::::::-->
+
+        <SplitView x:Name="splSideMenu"
+                   Grid.Row="1"
+                   DisplayMode="CompactOverlay"
+                   OpenPaneLength="300"
+                   CompactPaneLength="56"
+                   HorizontalAlignment="Left">
+
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single"
+                         x:Name="lbIcons"
+                         SelectionChanged="lbIcons_SelectionChanged"
+                         Background="#9BFFA7">
+                    <ListBoxItem Name="lbiHome">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE80F;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="Home"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="lbiTransactions">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE8DF;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="Transactions"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="lbiBorrow">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE109;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="Borrow"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="lbiLend">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE108;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="Lend"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="lbiBack">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE096;"
+                            FontSize="36"
+                            />
+                            <TextBlock Text="Change Account"
+                                       FontSize="24"
+                                       Margin="20,0,0,0"
+                                       VerticalAlignment="Top"
+                                   />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+
+        </SplitView>
     </Grid>
 </Page>
