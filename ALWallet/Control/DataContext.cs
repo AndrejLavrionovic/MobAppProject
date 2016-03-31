@@ -15,31 +15,43 @@ namespace ALWallet.Control {
         private SQLiteCommand com;
 
         public DataContext() {
-            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db1.sqlite");
+            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db3.sqlite");
             this.conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
         }
 
         public List<Account> getAllAcc() {
 
             List<Account> accounts = null;
+            try {
+                var query = conn.Table<Account>();
+                int c = query.Count();
 
-            var query = conn.Table<Account>();
-            int c = query.Count();
+                if (query.Count() > 0) {
 
-            if (query.Count() > 0) {
-
-                accounts = new List<Account>();
-                foreach (var message in query) {
-                    accounts.Add((Account)message);
+                    accounts = new List<Account>();
+                    foreach (var message in query) {
+                        accounts.Add((Account)message);
+                    }
+                    return accounts;
                 }
-                return accounts;
+                else return null;
             }
-            else return null;
+            catch (SQLiteException) {
+
+                return null;
+            }
         }
 
         public int createNewAccount(Account acc) {
-            int rows = conn.Insert(acc);
-            return rows;
+
+            try {
+                int rows = conn.Insert(acc);
+                return rows;
+            }
+            catch (SQLiteException) {
+                return 0;
+            }
+            
         }
 
         public int createNewCategory(Categories c) {
@@ -96,7 +108,7 @@ namespace ALWallet.Control {
             int lastday = System.DateTime.DaysInMonth(d.Year, d.Month);
 
             DateTime startPeriod = new DateTime(d.Year, d.Month, firstday);
-            DateTime endPeriod = new DateTime(d.Year, d.Month, lastday);
+            DateTime endPeriod = new DateTime(d.Year, d.Month, lastday, 23, 59, 59, 999);
 
             double sum = 0;
 
@@ -105,8 +117,8 @@ namespace ALWallet.Control {
                 List<double> trs = (from tr in conn.Table<TransactionMod>()
                                     where tr.accid == accountid
                                     where tr.type == type
-                                    where tr.date >= startPeriod.Date
-                                    where tr.date <= endPeriod.Date
+                                    where tr.date >= startPeriod
+                                    where tr.date <= endPeriod
                                     select tr.ammount).ToList();
 
                 if (trs.Count() > 0) {

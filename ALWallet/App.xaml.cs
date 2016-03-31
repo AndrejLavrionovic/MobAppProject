@@ -118,7 +118,7 @@ namespace ALWallet
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         //SQLITE
         private void createSqliteDb() {
-            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db1.sqlite");
+            string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db3.sqlite");
             SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
 
             conn.CreateTable<Account>();
